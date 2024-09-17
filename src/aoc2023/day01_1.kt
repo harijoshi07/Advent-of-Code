@@ -4,7 +4,7 @@ import java.io.File
 //Easy Method
 fun main() {
     // Read all lines from the file
-    val lines = File("src/input.txt").readLines()
+    val lines = File("src/input1_1.txt").readLines()
 
     var sum = 0
 
@@ -33,7 +33,7 @@ fun main() {
 //Best Method
 /*
 fun main() {
-    val input = File("src/input.txt").readLines()
+    val input = File("src/input1_1.txt").readLines()
     val calibrationSum = input.sumOf { line ->
         val digits = line.filter { it.isDigit() }
         "${digits.first()} ${digits.last()}".toInt()
