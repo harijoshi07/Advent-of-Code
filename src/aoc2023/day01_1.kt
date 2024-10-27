@@ -4,7 +4,7 @@ import java.io.File
 //Easy Method
 fun main() {
     // Read all lines from the file
-    val lines = File("src/input1_1.txt").readLines()
+    val lines = File("src/aoc2023/input1_1.txt").readLines()
 
     var sum = 0
 
@@ -22,7 +22,7 @@ fun main() {
         val lastDigit = collectDigits.last()
 
         // Combine first and last digit to form a two-digit number
-        val twoDigits = "$firstDigit $lastDigit".toInt()
+        val twoDigits = "$firstDigit$lastDigit".toInt()
 
         sum += twoDigits
     }
