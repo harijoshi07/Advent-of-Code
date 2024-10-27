@@ -4,9 +4,9 @@ import java.io.File
 
 fun main() {
     val input = File("src/aoc2015/input01.txt").readText()
-    println(input)
     val output = calcNoOfFloors(input)
     println(output)
+    betterMethod(input)
 
 }
 
@@ -23,4 +23,9 @@ fun calcNoOfFloors(input: String): Int {
     }
     return countUp - countDown
 
+}
+
+fun betterMethod(input: String) {
+    val output = input.sumOf { if (it == '(') 1 else -1 as Int }
+    println(output)
 }
