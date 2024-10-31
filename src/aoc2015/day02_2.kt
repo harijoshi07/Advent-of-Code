@@ -6,6 +6,7 @@ fun main() {
 
     val input = File("src/aoc2015/input02.txt").readLines()
     calculateTotalRibbonRequired(input)
+    calculateTotalRibbonLength(input)
 
 }
 
@@ -32,6 +33,30 @@ fun calculateTotalRibbonRequired(input: List<String>) {
         } else if (perimeter[2] >= perimeter[1] && perimeter[2] >= perimeter[0]) {
             smallestPerimeter = perimeter[0] + perimeter[1]
         }
+
+        //calculate ribbon amount for bow
+        val bowAmount = length * breadth * height
+
+        sum += bowAmount + smallestPerimeter
+    }
+    println(sum)
+
+}
+
+//better method
+fun calculateTotalRibbonLength(input: List<String>) {
+
+    var sum = 0
+
+    input.forEach {
+        val list = it.split("x").map { it.toInt() }
+        val (length, breadth, height) = list
+
+        //Calculate the perimeter of each side
+        val perimeter: List<Int> = listOf(2 * length, 2 * breadth, 2 * height)
+
+        //finding the smallest perimeter: better way
+        val smallestPerimeter = perimeter.sum() - perimeter.max()
 
         //calculate ribbon amount for bow
         val bowAmount = length * breadth * height
